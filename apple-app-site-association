@@ -1,11 +1,11 @@
 {
-	"applinks": {
-		"apps": [],
-		"details": [
-			{
-				"appID": "KFCNEC27GU.com.razeware.UniveralLinksTutorial",
-				"paths": [ "*"]
-			}
-		]
-	}
+  "applinkdemo": {
+    "apps": [],
+    "details": [
+    {
+      "appID": "25WQEF3G68.com.coca-cola.ent.ccnamobileapp",
+      "paths": ["*"]
+    }
+    ]
+  }
 }
