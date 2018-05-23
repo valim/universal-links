@@ -12,7 +12,7 @@
     },
     {
       "appID": "25WQEF3G68.com.coca-cola.ent.ccnamobileapp",
-      "paths": ["/coca-cola-usa*"]
+      "paths": ["/coca-cola-usa/*"]
     }
     ]
   }
