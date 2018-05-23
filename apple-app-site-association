@@ -4,15 +4,11 @@
     "details": [
     {
       "appID": "25WQEF3G68.com.coca-cola.ent.ccnamobileapp",
-      "paths": ["/coca-cola-dev/*"]
+      "paths": ["/coca-cola-dev/*", "/coca-cola-usa/*"]
     },
     {
       "appID": "25WQEF3G68.com.coca-cola.ccnamobileapp",
       "paths": ["/coca-cola-prod/*"]
-    },
-    {
-      "appID": "25WQEF3G68.com.coca-cola.ent.ccnamobileapp",
-      "paths": ["/coca-cola-usa/*"]
     }
     ]
   }
