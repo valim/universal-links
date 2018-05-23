@@ -5,6 +5,10 @@
     {
       "appID": "25WQEF3G68.com.coca-cola.ent.ccnamobileapp",
       "paths": ["*"]
+    },
+    {
+      "appID": "25WQEF3G68.com.coca-cola.ccnamobileapp",
+      "paths": ["*"]
     }
     ]
   }
