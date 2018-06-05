@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+  <head>
+    <title>AHH - Ice Toss</title>
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+    <meta content='Legwork / Mode Set' name='author'>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'>
+    <meta content='no' name='imagetoolbar'>
+    <meta content='YES' name='apple-touch-fullscreen'>
+    <meta content='YES' name='apple-mobile-web-app-capable'>
+    <meta content='black' name='apple-mobile-web-app-status-bar-style'>
+    <meta name="description" content="The perfect temperature to enjoy a Coke is 37 degrees. Too perfect, some might say. But that’s a risk some are willing to take." />
+    <!-- Facebook -->
+    <meta property="og:title" content="AHH - Ice Toss"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="http://www.ahhhhhhhhhh.com">
+    <meta property="og:image" content="http://www.ahhhhhhhhhh.com/shared/images/IceToss.jpg"/>
+    <meta property="og:description" content="The perfect temperature to enjoy a Coke is 37 degrees. Too perfect, some might say. But that’s a risk some are willing to take." />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@CocaCola"/>
+    <meta name="twitter:url" content="http://www.ahhhhhhhhhh.com"/>
+    <meta name="twitter:title" content="AHH - Ice Toss" />
+    <meta name="twitter:description" content="The perfect temperature to enjoy a Coke is 37 degrees. Too perfect, some might say. But that’s a risk some are willing to take." />
+    <meta name="twitter:image" content="http://www.ahhhhhhhhhh.com/shared/images/IceToss.jpg" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="./shared/stylesheets/prototypes.css" type="text/css" />
+    <link rel="stylesheet" href="./stylesheets/ice-toss.css" type="text/css" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
+    <script type="text/javascript">
+    window.isIE8 = false;
+    </script>
+
+    <!--[if IE 8]>
+
+    <script type="text/javascript"> window.isIE8 = true; window.console = function(){}; </script>
+    <![endif]-->
+  </head>
+  <body>
+    <div id='volume_button'></div>
+    <div id="outer">
+      <div id="backgrounds">
+        <div id="background-default"></div>
+        <div id="background-hot"><div class="inner"></div></div>
+        <div id="background-cold"><div class="inner"></div></div>
+        <div id="background-icicles"></div>
+      </div>
+      <div id="game" class="screen hidden ">
+        <div id="behind-cup">
+          <div class="ice-cube-shadow hidden"></div>
+          <div class="ice-cube-shadow hidden"></div>
+          <div class="ice-cube-shadow hidden"></div>
+          <div class="ice-cube-shadow hidden"></div>
+          <div class="ice-cube-shadow hidden"></div>
+          <div class="ice-cube-shadow hidden"></div>
+          <div class="ice-cube-shadow hidden"></div>
+          <div class="ice-cube-shadow hidden"></div>
+          <div class="ice-cube-shadow hidden"></div>
+          <div class="ice-cube-shadow hidden"></div>
+        </div>
+        <div id="cup-holder">
+          <div id="cup-mover">
+            <div id="cup-puddle"></div>
+            <div id="cup"></div>
+            <div id="cup-splash"><img id="cup-splash-sprite" src="images/splash-anim.png" width="525" height="93" /></div>
+            <div id="cup-straw"></div>
+            <div id="cup-sweat"></div>
+          </div>
+        </div>
+        <div id="in-front-of-cup">
+          <div class="ice-cube"></div>
+          <div class="ice-cube"></div>
+          <div class="ice-cube"></div>
+          <div class="ice-cube"></div>
+          <div class="ice-cube"></div>
+          <div class="ice-cube"></div>
+          <div class="ice-cube"></div>
+          <div class="ice-cube"></div>
+          <div class="ice-cube"></div>
+          <div class="ice-cube"></div>
+        </div>
+        <div id="slingshot">
+          <div id="arms"></div>
+          <div id="elastic-left"></div>
+          <div id="elastic-right"></div>
+          <div id="cradle"><div id="cradle-inner"></div></div>
+        </div>
+        <div id="temperature">
+          <div id="meter-outer">
+            <div id="meter">
+              <div id="degrees"></div>
+            </div>
+          </div>
+        </div>
+        <div id="perfect-temp"></div>
+      </div>
+      <div id="intro" class="screen">
+        <div id="instructions">
+          <div id="sequence">
+            <img id="sprite" src="images/instructions-sequence.png" width="1980" height="540"/>
+          </div>
+        </div>
+      </div>
+      <div id="game-over" class="screen hidden">
+        <div id="game-over-interface">
+          <div id="game-over-text"></div>
+          <div id="play-again-button"></div>
+          <!--<div id="social-buttons">
+
+            <a id="twitter-button" href="#"></a>
+            <a id="facebook-button" href="#"></a>
+
+          </div>-->
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="./shared/javascripts/vendor/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript" src="./shared/javascripts/vendor/raphael-min.js"></script>
+    <script type="text/javascript" src="./shared/javascripts/vendor/soundmanager2-jsmin.js"></script>
+    <script type="text/javascript" src="./shared/javascripts/vendor/mbp-fixes.js"></script>
+    <script type="text/javascript" src="./shared/javascripts/vendor/request-animation-frame.js"></script>
+    <script type="text/javascript" src="./shared/javascripts/modeset/math_util.js"></script>
+    <script type="text/javascript" src="./shared/javascripts/modeset/touch_tracker.js"></script>
+    <script type="text/javascript" src="./shared/javascripts/modeset/mobile/button-touch-callback.js"></script>
+    <script type="text/javascript" src="./shared/javascripts/modeset/mobile/mobile-util.js"></script>
+    <script type="text/javascript" src="./shared/javascripts/modeset/elastic-point.js"></script>
+    <script type="text/javascript" src="./shared/javascripts/modeset/css-helper.js"></script>
+    <script type="text/javascript" src="./shared/javascripts/modeset/sprite_animation.js"></script>
+    <script type="text/javascript" src="./shared/javascripts/shared/prototypes.js"></script>
+
+    <script>
+      // GLOBAL THINGS TO DO
+      MobileUtil.lockTouchScreen(true);
+      window.ahhh.initOrientationMessage();
+      MBP.scaleFix();
+    </script>
+    <script type="text/javascript" src="./javascripts/ice-toss.js"></script>
+
+
+    <!-- Begin global navigation embed v1.61 -->
+    <iframe id="nav-container" allowtransparency="true" style="display:none;" frameborder="0"></iframe>
+    <script type="text/javascript">
+
+    var AhhGlobal = (function() {
+        // The assigned Ahh ID for this experience.  Appears as the number in the global navigation.
+        var ahhid = 10,
+        // Google Analytics ID.  If left blank, the global analytics ID will be used.
+        gaid = 'UA-39021710-10';
+
+        function togglePause(toggle) {
+            /**
+             * Global pause/mute toggle.  Insert any custom code needed to interact with this experience
+             * to mute, pause or do anything in particular while the nav is open.
+             * Accepts a boolean value: true = pause, false = unpause
+             * This is called automatically when the navigation is opened or closed.
+             */
+             if(toggle == true){
+              setTimeout(function(){
+                $("#outer").hide();
+              },0)
+              soundManager.mute();
+             }
+             else {
+              setTimeout(function(){
+                $("#outer").show();
+              },0)
+              if($("#volume_button").hasClass('mute')){
+                soundManager.mute();
+              }
+              else {
+                soundManager.unmute();
+              }
+
+             }
+
+        };
+        return {
+            ahhid: ahhid,
+            gaid: gaid,
+            togglePause: togglePause
+        };
+    }());
+    (function() {
+        var ahhembed = document.createElement('script');
+        ahhembed.type = 'text/javascript';
+        ahhembed.async = true;
+        ahhembed.src = '//www.ahh.com/embed/js/ahh.embed.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ahhembed, s);
+    }());
+    </script>
+    <!-- End global navigation embed -->
+
+    <script type="text/javascript">
+
+     var _gaq = _gaq || [];
+     _gaq.push(['_setAccount', 'UA-39021710-10']);
+     _gaq.push(['_trackPageview']);
+
+     (function() {
+       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+     })();
+
+    </script>
+    <!--
+    Start of DoubleClick Floodlight Tag: Please do not remove
+    Activity name of this tag: Ahh Effect - Desktop: H - 10
+    URL of the webpage where the tag is expected to be placed: http://www.Ahhhhhhhhhh.com
+    This tag must be placed between the <body> and </body> tags, as close as possible to the opening tag.
+    Creation Date: 03/28/2013
+    -->
+    <script type="text/javascript">
+    var axel = Math.random() + "";
+    var a = axel * 10000000000000;
+    document.write('<iframe src="http://1352258.fls.doubleclick.net/activityi;src=1352258;type=ahhef728;cat=ahhef630;ord=' + a + '?" width="1" height="1" frameborder="0" style="display:none"></iframe>');
+    </script>
+    <noscript>
+    <iframe src="http://1352258.fls.doubleclick.net/activityi;src=1352258;type=ahhef728;cat=ahhef630;ord=1?" width="1" height="1" frameborder="0" style="display:none"></iframe>
+    </noscript>
+    <!-- End of DoubleClick Floodlight Tag: Please do not remove -->
+
+    <!-- START OF SmartSource Data Collector TAG v10.2.36 -->
+    <!-- Copyright (c) 2012 Webtrends Inc.  All rights reserved. -->
+    <script>
+    window.webtrendsAsyncInit=function(){
+        var dcs=new Webtrends.dcs().init({
+            dcsid:"dcseatfr100000knvj9k6cln8_2r4k",
+            domain:"statse.webtrendslive.com",
+            timezone:-5,
+            i18n:true,
+            offsite:true,
+            download:true,
+            downloadtypes:"xls,doc,pdf,txt,csv,zip,docx,xlsx,rar,gzip",
+            onsitedoms:"ahh.com",
+            fpcdom:".ahh.com",
+            plugins:{
+                hm:{src:"//s.webtrends.com/js/webtrends.hm.js"},
+                facebook:{src:"//s.webtrends.com/js/webtrends.fb.js"}
+            }
+            }).track();
+    };
+    (function(){
+        var s=document.createElement("script"); s.async=true; s.src="webtrends.min.js";
+        var s2=document.getElementsByTagName("script")[0]; s2.parentNode.insertBefore(s,s2);
+    }());
+    </script>
+    <noscript><img alt="dcsimg" id="dcsimg" width="1" height="1" src="//statse.webtrendslive.com/dcseatfr100000knvj9k6cln8_2r4k/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=10.2.36&amp;dcssip=www.ahh.com"/></noscript>
+    <!-- END OF SmartSource Data Collector TAG v10.2.36 -->
+
+
+
+    <script src='http://connect.facebook.net/en_US/all.js'></script>
+    <script type="text/javascript" src="./javascripts/social-share.js"></script>
+
+  </body>
+</html>
