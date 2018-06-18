@@ -4,11 +4,11 @@
     "details": [
     {
       "appID": "25WQEF3G68.com.coca-cola.ent.ccnamobileapp",
-      "paths": ["/coca-cola-app*"]
+      "paths": ["/coca-cola-app/*"]
     },
     {
       "appID": "Z9VSKJ792A.com.coca-cola.ccnamobileapp",
-      "paths": ["/coca-cola-app*"]
+      "paths": ["/coca-cola-app/*"]
     }
     ]
   }
